@@ -1,0 +1,1791 @@
+/**
+* WLS - Base styles
+* Common base styles for prototypes
+* -----------------------
+* @date: 25.05.2016
+* @author: kevin.richard@swissquote.ch
+*/
+
+/**
+* Common elements
+*/
+
+/**
+*---------------------------------------------------------------------------
+* html & body
+*---------------------------------------------------------------------------
+*/
+html,
+body,
+body * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    display: block;
+    width: 100%;
+}
+
+html {
+    /*
+    * note: used to align page content compared to
+    *       the header navigantion
+    */
+    margin-top: 32px;
+}
+
+body {
+    position: relative;
+    padding: 0;
+    margin: 0;
+
+    background: rgb(250,250,250);
+
+    font-family: Arial, Verdana, Geneva, sans-serif;
+    font-weight: lighter;
+    font-style: normal;
+    font-size: 11pt;
+    line-height: 1.3;
+    color: rgba(80,80,80);
+    color: rgba(0,0,0,0.7);
+}
+
+/**
+*---------------------------------------------------------------------------
+* html5 elements
+*---------------------------------------------------------------------------
+*/
+main, header, nav, section, article, figure, figcaption, aside, footer {
+    display: block;
+    position: relative;
+}
+
+figure, figcaption {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+/**
+*---------------------------------------------------------------------------
+* pseudo elements
+*---------------------------------------------------------------------------
+*/
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/**
+*---------------------------------------------------------------------------
+* images
+*---------------------------------------------------------------------------
+*/
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+
+/**
+*---------------------------------------------------------------------------
+* headlines
+*---------------------------------------------------------------------------
+*/
+h1, h2, h3, h4, h5, h6 {
+    padding: 5px 0;
+    margin: 0;
+
+    font-family: Arial, Verdana, Geneva, sans-serif;
+    font-weight: lighter;
+    font-style: normal;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+h2 {
+    font-size: 22pt;
+}
+
+h3 {
+    font-size: 18pt;
+}
+
+h4 {
+    font-size: 16pt;
+}
+
+h5 {
+    font-size: 14pt;
+}
+
+h6 {
+    font-size: 12pt;
+}
+
+/**
+*---------------------------------------------------------------------------
+* paragraph
+*---------------------------------------------------------------------------
+*/
+p {
+    padding: 5px 0;
+    margin: 0;
+
+    font-family: Arial, Verdana, Geneva, sans-serif;
+    font-weight: lighter;
+    font-style: normal;
+    line-height: 1.3;
+    font-size: 12pt;
+}
+
+/**
+*---------------------------------------------------------------------------
+* links
+*---------------------------------------------------------------------------
+*/
+a {
+    text-decoration: none;
+    color: rgb(52,152,219);
+    transition: 0.3s;
+}
+
+a:hover,
+a:focus {
+    color: rgb(37,116,169);
+    transition: 0.3s;
+}
+
+/**
+*---------------------------------------------------------------------------
+* text styling
+*---------------------------------------------------------------------------
+*/
+strong, b {
+    font-weight: bold;
+}
+
+/**
+* Generic classes
+*/
+
+/**
+*---------------------------------------------------------------------------
+* centered text
+*---------------------------------------------------------------------------
+*/
+h1.centered,
+h2.centered,
+h3.centered,
+h4.centered,
+h5.centered,
+h6.centered,
+p.centered,
+a.centered {
+    text-align: center;
+}
+
+/**
+*---------------------------------------------------------------------------
+* clear
+* note: mainly used to reset floats
+*---------------------------------------------------------------------------
+*/
+.clear {
+    float: none;
+    clear: both;
+}
+
+/**
+*---------------------------------------------------------------------------
+* hidden anchor link
+*---------------------------------------------------------------------------
+*/
+a.anchor_hidden {
+    display: block;
+    position: relative;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/**
+*---------------------------------------------------------------------------
+* image overlay
+*---------------------------------------------------------------------------
+*/
+.image_overlay {
+    display: block;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    background: none;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    /* prevent image flicker */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    /* reduce CPU usage */
+    -webkit-transform-style: flat;
+    -moz-transform-style: flat;
+    -ms-transform-style: flat;
+    -o-transform-style: flat;
+    transform-style: flat;
+}
+
+/**
+*---------------------------------------------------------------------------
+* color overlay
+*---------------------------------------------------------------------------
+*/
+.color_overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: none;
+}
+
+
+/**
+*---------------------------------------------------------------------------
+* columns
+*---------------------------------------------------------------------------
+*/
+.columns {
+    /* old version of flex */
+    display: -webkit-box;
+    display: -moz-box;
+
+    /* flex box */
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    /* flex box params */
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+
+    -webkit-align-content: flex-start;
+    -moz-align-content: flex-start;
+    -ms-align-content: flex-start;
+    -o-align-content: flex-start;
+    align-content: flex-start;
+
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    -ms-align-items: flex-start;
+    -o-align-items: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+}
+
+.columns .col {
+    padding: 0;
+    margin: 0;
+}
+
+.columns .col .content {
+    padding: 10px 20px;
+}
+
+/**
+*---------------------------------------------------------------------------
+* columns row
+*---------------------------------------------------------------------------
+*/
+.columns.row_2 .col {
+    width: 50%;
+}
+
+.columns.row_3 .col {
+    width: 33.3%;
+}
+
+.columns.row_4 .col {
+    width: 25%;
+}
+
+.columns.row_8 .col {
+    width: 12.5%;
+}
+
+/**
+*---------------------------------------------------------------------------
+* columns vertical align col left
+*---------------------------------------------------------------------------
+*/
+.columns.align_vert_top {
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    -ms-align-items: flex-start;
+    -o-align-items: flex-start;
+    align-items: flex-start;
+}
+
+/**
+*---------------------------------------------------------------------------
+* columns vertical align col center
+*---------------------------------------------------------------------------
+*/
+.columns.align_vert_center {
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+}
+
+/**
+*---------------------------------------------------------------------------
+* columns vertical align col right
+*---------------------------------------------------------------------------
+*/
+.columns.align_vert_bottom {
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    -ms-align-items: flex-end;
+    -o-align-items: flex-end;
+    align-items: flex-end;
+}
+
+/**
+*---------------------------------------------------------------------------
+* columns horizontal align col left
+*---------------------------------------------------------------------------
+*/
+.columns.align_horiz_left {
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    -o-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+/**
+*---------------------------------------------------------------------------
+* columns horizontal align col center
+*---------------------------------------------------------------------------
+*/
+.columns.align_horiz_center {
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+}
+
+/**
+*---------------------------------------------------------------------------
+* columns horizontal align col right
+*---------------------------------------------------------------------------
+*/
+.columns.align_horiz_right {
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    -o-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+/**
+*---------------------------------------------------------------------------
+* columns wrap col
+*---------------------------------------------------------------------------
+*/
+.columns.wrap_wrap {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+/**
+*---------------------------------------------------------------------------
+* columns nowrap col
+*---------------------------------------------------------------------------
+*/
+.columns.wrap_nowrap {
+    -webkit-flex-wrap: nowrap;
+    -moz-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    -o-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+/**
+*---------------------------------------------------------------------------
+* column full width
+*---------------------------------------------------------------------------
+*/
+.columns .col.full {
+    width: 100%;
+}
+
+/**
+*---------------------------------------------------------------------------
+* column 1/3
+*---------------------------------------------------------------------------
+*/
+.columns .col.one_third {
+    width: 33%;
+}
+
+/**
+*---------------------------------------------------------------------------
+* column 2/3
+*---------------------------------------------------------------------------
+*/
+.columns .col.two_third {
+    width: 66%;
+}
+
+/**
+*---------------------------------------------------------------------------
+* column 1/4
+*---------------------------------------------------------------------------
+*/
+.columns .col.one_fourth {
+    width: 25%;
+}
+
+/**
+*---------------------------------------------------------------------------
+* column 2/4
+*---------------------------------------------------------------------------
+*/
+.columns .col.two_fourth {
+    width: 50%;
+}
+
+/**
+*---------------------------------------------------------------------------
+* column 3/4
+*---------------------------------------------------------------------------
+*/
+.columns .col.three_fourth {
+    width: 75%;
+}
+
+/**
+*---------------------------------------------------------------------------
+* buttons
+*---------------------------------------------------------------------------
+*/
+.button {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    margin: 0;
+    background: rgb(232, 126, 4);
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+
+    cursor: pointer;
+
+    text-align: center;
+    font-size: 15pt;
+    color: rgb(255,255,255);
+}
+
+.button:hover,
+.button:focus {
+    background: rgb(211, 84, 0);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+    color: rgb(255,255,255);
+}
+
+/* download */
+.button.btn_download {
+    font-size: 20pt;
+    font-weight: lighter;
+    text-shadow: none;
+    padding: 15px 20px;
+}
+
+.button.btn_download:hover,
+.button.btn_download:focus {
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.5);
+}
+
+/* small button */
+.button.btn_small {
+    font-size: 11pt;
+    font-weight: normal;
+    text-shadow: none;
+    padding: 5px 10px;
+}
+
+/* normal button */
+.button.btn_normal {
+    font-size: 12pt;
+    font-weight: normal;
+    text-shadow: none;
+    padding: 10px 15px;
+}
+
+/* medium button */
+.button.btn_medium {
+    font-size: 13pt;
+    font-weight: lighter;
+    text-shadow: none;
+    padding: 10px 15px;
+}
+
+/* large button */
+.button.btn_large {
+    font-size: 20pt;
+    font-weight: lighter;
+    text-shadow: none;
+    padding: 15px 20px;
+}
+
+/* inherit button */
+.button.btn_inherit {
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+}
+
+/* green button */
+.button.btn_blue {
+    background: rgb(52, 152, 219);
+}
+
+.button.btn_blue:hover,
+.button.btn_blue:focus {
+    background: rgb(37, 116, 169);
+}
+
+.button.btn_outline.btn_blue {
+    background: none;
+    box-shadow: 0 0 0 1px rgb(52, 152, 219);
+    color: rgb(52, 152, 219);
+}
+
+.button.btn_outline.btn_blue:hover,
+.button.btn_outline.btn_blue:focus {
+    background: rgb(52, 152, 219);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+    color: rgb(255,255,255);
+}
+
+/* green button */
+.button.btn_green {
+    background: rgb(0, 177, 106);
+}
+
+.button.btn_green:hover,
+.button.btn_green:focus {
+    background: rgb(30, 130, 76);
+}
+
+.button.btn_outline.btn_green {
+    background: none;
+    box-shadow: 0 0 0 1px rgb(0, 177, 106);
+    color: rgb(0, 177, 106);
+}
+
+.button.btn_outline.btn_green:hover,
+.button.btn_outline.btn_green:focus {
+    background: rgb(0, 177, 106);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+    color: rgb(255,255,255);
+}
+
+/* orange button */
+.button.btn_orange {
+    background: rgb(232, 126, 4);
+}
+
+.button.btn_orange:hover,
+.button.btn_orange:focus {
+    background: rgb(211, 84, 0);
+}
+
+.button.btn_outline.btn_orange {
+    background: none;
+    box-shadow: 0 0 0 1px rgb(232, 126, 4);
+    color: rgb(232, 126, 4);
+}
+
+.button.btn_outline.btn_orange:hover,
+.button.btn_outline.btn_orange:focus {
+    background: rgb(232, 126, 4);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+    color: rgb(255,255,255);
+}
+
+/* purple button */
+.button.btn_purple {
+    background: rgb(142, 68, 173);
+}
+
+.button.btn_purple:hover,
+.button.btn_purple:focus {
+    background: rgb(103, 65, 114);
+}
+
+.button.btn_outline.btn_purple {
+    background: none;
+    box-shadow: 0 0 0 1px rgb(142, 68, 173);
+    color: rgb(142, 68, 173);
+}
+
+.button.btn_outline.btn_purple:hover,
+.button.btn_outline.btn_purple:focus {
+    background: rgb(142, 68, 173);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+    color: rgb(255,255,255);
+}
+
+/* red button */
+.button.btn_red {
+    background: rgb(217, 30, 24);
+}
+
+.button.btn_red:hover,
+.button.btn_red:focus {
+    background: rgb(150, 40, 27);
+}
+
+.button.btn_outline.btn_red {
+    background: none;
+    box-shadow: 0 0 0 1px rgb(217, 30, 24);
+    color: rgb(217, 30, 24);
+}
+
+.button.btn_outline.btn_red:hover,
+.button.btn_outline.btn_red:focus {
+    background: rgb(217, 30, 24);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+    color: rgb(255,255,255);
+}
+
+/* black button */
+.button.btn_black {
+    background: rgba(0,0,0,0.7);
+}
+
+.button.btn_black:hover,
+.button.btn_black:focus {
+    background: rgba(0,0,0,0.9);
+}
+
+.button.btn_outline.btn_black {
+    background: none;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.7);
+    color: rgba(0,0,0,0.7);
+}
+
+.button.btn_outline.btn_black:hover,
+.button.btn_outline.btn_black:focus {
+    background: rgba(0,0,0,0.7);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+    color: rgb(255,255,255);
+}
+
+/* hover info */
+.button .info {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: 80%;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: 0.5s ease-out;
+
+    font-style: normal;
+    font-weight: lighter;
+    font-size: inherit;
+    color: inherit;
+}
+
+.button:hover .info,
+.button:focus .info {
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+    transition: 0.3s ease-out;
+}
+
+/* info font size */
+.button .info.small {
+    font-size: 9pt;
+}
+
+.button .info.normal {
+    font-size: 12pt;
+}
+
+.button .info.medium {
+    font-size: 14pt;
+}
+
+.button .info.big {
+    font-size: 18pt;
+}
+
+/* info color */
+.button.btn_blue.info_box_colored .info {
+    color: rgb(52, 152, 219);
+}
+
+.button.btn_green.info_box_colored .info {
+    color: rgb(0, 177, 106);
+}
+
+.button.btn_orange.info_box_colored .info {
+    color: rgb(232, 126, 4);
+}
+
+.button.btn_purple.info_box_colored .info {
+    color: rgb(142, 68, 173);
+}
+
+.button.btn_red.info_box_colored .info {
+    color: rgb(217, 30, 24);
+}
+
+/* switch on/off */
+.button.btn_switcher {
+    display: inline-block;
+    padding: 5px;
+    background: none;
+    cursor: pointer;
+}
+
+.button.btn_switcher .flex_content {
+    /* old version of flex */
+    display: -webkit-box;
+    display: -moz-box;
+
+    /* flex box */
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    /* flex box params */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+}
+
+.button.btn_switcher .flex_content span.label {
+    font-size: 11pt;
+    font-weight: normal;
+    color: rgba(0,0,0,0.5);
+}
+
+.button.btn_switcher .flex_content .switch,
+.button.btn_switcher .flex_content .switch span {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: 0.3s cubic-bezier(.35,.97,.68,1.04);
+}
+
+.button.btn_switcher .flex_content .switch {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    padding: 0;
+    margin: 0 5px;
+    border-radius: 100px;
+}
+
+.button.btn_switcher .flex_content .switch span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.button.btn_switcher .flex_content .switch span.bg {
+    width: 100%;
+    background: rgba(0,0,0,0.05);
+    box-shadow: inset 0 0 0 2px rgba(0,0,0,0.1);
+    border-radius: 100px;
+    transition: 0.3s cubic-bezier(.35,.97,.68,1.04) 0s;
+}
+
+.button.btn_switcher.checked .flex_content .switch span.bg {
+    background: rgba(63,195,128,1);
+    transition: 0.3s cubic-bezier(.35,.97,.68,1.04) 0.1s;
+}
+
+.button.btn_switcher .flex_content .switch span.selector {
+    width: 20px;
+    background: rgba(255,255,255,1);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+.button.btn_switcher.checked .flex_content .switch span.selector {
+    -webkit-transform: translate3d(100%,0,0);
+    -moz-transform: translate3d(100%,0,0);
+    -ms-transform: translate3d(100%,0,0);
+    -o-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
+}
+
+/**
+* Email fake link
+* Note: this style is used to make a
+*       clickable (js) tag (span) to looks like a real link
+*/
+
+/**
+*---------------------------------------------------------------------------
+* email link
+*---------------------------------------------------------------------------
+*/
+span.email_link {
+    display: inline-block;
+    text-decoration: underline;
+    color: rgb(52, 152, 219);
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+span.email_link:hover,
+span.email_link:focus {
+    text-decoration: none;
+    color: rgb(37, 116, 169);
+    transition: 0.3s;
+}
+
+
+/**
+*---------------------------------------------------------------------------
+* flex wrapper
+* Note: this container is used to align elements (like buttons)
+*       to the center (x & y)
+*---------------------------------------------------------------------------
+*/
+.flex_wrapper {
+    /* old version of flex */
+    display: -webkit-box;
+    display: -moz-box;
+
+    /* flex box */
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    /* flex box params */
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+
+    -webkit-align-content: center;
+    -moz-align-content: center;
+    -ms-align-content: center;
+    -o-align-content: center;
+    align-content: center;
+
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+}
+
+.flex_wrapper .button {
+    margin: 0 0.5%;
+}
+
+/**
+*---------------------------------------------------------------------------
+* ajax loader
+*---------------------------------------------------------------------------
+*/
+.ajax_loader {
+    display: table;
+    position: relative;
+    z-index: 777;
+    padding: 2% 0;
+    margin: 0 auto;
+}
+
+.ajax_loader .effect_overlay {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+
+    -webkit-transform: translate3d(-50%,-50%,0);
+    -moz-transform: translate3d(-50%,-50%,0);
+    -ms-transform: translate3d(-50%,-50%,0);
+    -o-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+
+    background: none;
+    background: -webkit-radial-gradient(rgba(255,255,255,0.5) 5%, rgba(255,255,255,0) 50%);
+    background: -moz-radial-gradient(rgba(255,255,255,0.5) 5%, rgba(255,255,255,0) 50%);
+    background: -ms-radial-gradient(rgba(255,255,255,0.5) 5%, rgba(255,255,255,0) 50%);
+    background: -o-radial-gradient(rgba(255,255,255,0.5) 5%, rgba(255,255,255,0) 50%);
+    background: radial-gradient(rgba(255,255,255,0.5) 5%, rgba(255,255,255,0) 50%);
+}
+
+.ajax_loader img.img_loader {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.ajax_loader img.img_loader.error_icon {
+    min-width: 80px;
+    min-height: 80px;
+}
+
+.ajax_loader .label_loader {
+    display: block;
+    position: relative;
+    padding: 20px 5px;
+    margin: 0;
+
+    font-size: 13pt;
+    font-weight: normal;
+    font-style: normal;
+    line-height: normal;
+    text-align: center;
+    color: rgba(0,0,0,0.5);
+}
+
+.ajax_loader .label_loader.label_error {
+    color: rgb(150, 40, 27);
+}
+
+
+/**
+* Generic page classes
+*/
+
+/**
+*---------------------------------------------------------------------------
+* background image
+*---------------------------------------------------------------------------
+*/
+.cover_image {
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/**
+*---------------------------------------------------------------------------
+* page wrappers
+*---------------------------------------------------------------------------
+*/
+.page_wrapper,
+.page_content,
+main[role="main"],
+div[role="main"] {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+/**
+*---------------------------------------------------------------------------
+* page wrappers
+*---------------------------------------------------------------------------
+*/
+.page_wrapper section:first-child {
+    padding-top: 50px;
+}
+
+/**
+*---------------------------------------------------------------------------
+* content wrapper
+* note: mainly used to align content
+*---------------------------------------------------------------------------
+*/
+.wrapper {
+    display: block;
+    position: relative;
+    width: 90%;
+    max-width: 960px;
+    padding: 2% 0;
+    margin: 0 auto;
+}
+
+/**
+*---------------------------------------------------------------------------
+* list & list items in the wrapper
+*---------------------------------------------------------------------------
+*/
+.wrapper ul,
+.wrapper ol {
+    padding: 10px 0 10px 30px;
+    margin: 1% 0;
+}
+
+.wrapper ul li,
+.wrapper ol li {
+    padding: 5px 0;
+
+    font-family: Arial, Verdana, Geneva, sans-serif;
+    font-weight: lighter;
+    font-style: normal;
+    line-height: 1.3;
+    font-size: 12pt;
+}
+
+/**
+* Prevent list style styles override
+*/
+.wrapper .list_style {
+    padding: 1% 0;
+    margin: 1% 0;
+}
+
+.wrapper .list_style li {
+    padding-left: 35px !important;
+    font-size: 13pt;
+}
+
+/**
+* Header
+*/
+
+/**
+*---------------------------------------------------------------------------
+* page header navigation
+*---------------------------------------------------------------------------
+*/
+.page_wrapper header.main_header nav.main_navigation {
+    display: table;
+    position: relative;
+    float: right;
+    padding: 0;
+}
+
+.page_wrapper header.main_header nav.main_navigation ul,
+.page_wrapper header.main_header nav.main_navigation ul li {
+    display: block;
+    position: relative;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.page_wrapper header.main_header nav.main_navigation ul li {
+    list-style: none;
+}
+
+.page_wrapper header.main_header nav.main_navigation ul li a {
+    display: block;
+    position: relative;
+    padding: 20px 15px;
+    margin: 0;
+
+    font-size: 14pt;
+    line-height: 1;
+    color: rgba(0,0,0,0.5);
+}
+
+.page_wrapper header.main_header nav.main_navigation ul li:hover a {
+    background: rgba(0,0,0,0.1);
+    box-shadow: inset 0 3px 0 rgba(52,152,219,0.5);
+    color: rgba(0,0,0,0.7);
+}
+
+.page_wrapper header.main_header nav.main_navigation ul li.current a {
+    background: rgba(255,255,255,0.8);
+    box-shadow: inset 0 3px 0 rgba(52,152,219,0.8);
+    color: rgb(52,152,219);
+}
+
+/**
+* Effects
+*/
+
+/**
+*---------------------------------------------------------------------------
+* blurred background
+*---------------------------------------------------------------------------
+*/
+.blurred {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -ms-filter: blur(5px);
+    -o-filter: blur(5px);
+    filter: blur(5px);
+    transition: 0.5s;
+}
+
+.blurred.low_blur {
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -ms-filter: blur(3px);
+    -o-filter: blur(3px);
+    filter: blur(3px);
+}
+
+.blurred.medium_blur {
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -ms-filter: blur(8px);
+    -o-filter: blur(8px);
+    filter: blur(8px);
+}
+
+.blurred.high_blur {
+    -webkit-filter: blur(12px);
+    -moz-filter: blur(12px);
+    -ms-filter: blur(12px);
+    -o-filter: blur(12px);
+    filter: blur(12px);
+}
+
+.blurred.max_blur {
+    -webkit-filter: blur(22px);
+    -moz-filter: blur(22px);
+    -ms-filter: blur(22px);
+    -o-filter: blur(22px);
+    filter: blur(22px);
+}
+
+/**
+*---------------------------------------------------------------------------
+* unblurred background
+*---------------------------------------------------------------------------
+*/
+.no_blurred {
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -ms-filter: blur(0px);
+    -o-filter: blur(0px);
+    filter: blur(0px);
+    transition: 0.5s;
+}
+
+/**
+* FIX
+* Special styles to fix element
+* Note: here goes styles for elements skinned using external files
+*       that we cannot directly modify
+*/
+
+/**
+*---------------------------------------------------------------------------
+* Main header navigation menu
+* Note: this part is about to fix the display issue when scrolling
+*       with sticky elements in the page
+*---------------------------------------------------------------------------
+*/
+header.page-header,
+body header.page-header {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+
+/**
+* Animations
+*/
+
+/**
+*---------------------------------------------------------------------------
+* Fade in animation
+*---------------------------------------------------------------------------
+*/
+@-webkit-keyframes FadeIn {
+    from {
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+    to {
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes FadeIn {
+    from {
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+    to {
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes FadeIn {
+    from {
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+    to {
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+}
+
+/**
+*---------------------------------------------------------------------------
+* Fade out animation
+*---------------------------------------------------------------------------
+*/
+@-webkit-keyframes FadeOut {
+    from {
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+    to {
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes FadeOut {
+    from {
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+    to {
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes FadeOut {
+    from {
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+    to {
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+}
+
+
+@-o-keyframes FadeOut {
+    from {
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+    to {
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes FadeOut {
+    from {
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -ms-opacity: 1;
+        opacity: 1;
+    }
+    to {
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -ms-opacity: 0;
+        opacity: 0;
+    }
+}
+
+/**
+*---------------------------------------------------------------------------
+* slide from right animation
+*---------------------------------------------------------------------------
+*/
+@-webkit-keyframes SlideFromRight {
+    from {
+        -webkit-transform: translate3d(-30%,0,0);
+        -moz-transform: translate3d(-30%,0,0);
+        -ms-transform: translate3d(-30%,0,0);
+        -o-transform: translate3d(-30%,0,0);
+        transform: translate3d(-30%,0,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-moz-keyframes SlideFromRight {
+    from {
+        -webkit-transform: translate3d(-30%,0,0);
+        -moz-transform: translate3d(-30%,0,0);
+        -ms-transform: translate3d(-30%,0,0);
+        -o-transform: translate3d(-30%,0,0);
+        transform: translate3d(-30%,0,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-ms-keyframes SlideFromRight {
+    from {
+        -webkit-transform: translate3d(-30%,0,0);
+        -moz-transform: translate3d(-30%,0,0);
+        -ms-transform: translate3d(-30%,0,0);
+        -o-transform: translate3d(-30%,0,0);
+        transform: translate3d(-30%,0,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-o-keyframes SlideFromRight {
+    from {
+        -webkit-transform: translate3d(-30%,0,0);
+        -moz-transform: translate3d(-30%,0,0);
+        -ms-transform: translate3d(-30%,0,0);
+        -o-transform: translate3d(-30%,0,0);
+        transform: translate3d(-30%,0,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes SlideFromRight {
+    from {
+        -webkit-transform: translate3d(-30%,0,0);
+        -moz-transform: translate3d(-30%,0,0);
+        -ms-transform: translate3d(-30%,0,0);
+        -o-transform: translate3d(-30%,0,0);
+        transform: translate3d(-30%,0,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+/**
+*---------------------------------------------------------------------------
+* slide from left animation
+*---------------------------------------------------------------------------
+*/
+@-webkit-keyframes SlideFromLeft {
+    from {
+        -webkit-transform: translate3d(30%,0,0);
+        -moz-transform: translate3d(30%,0,0);
+        -ms-transform: translate3d(30%,0,0);
+        -o-transform: translate3d(30%,0,0);
+        transform: translate3d(30%,0,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-moz-keyframes SlideFromLeft {
+    from {
+        -webkit-transform: translate3d(30%,0,0);
+        -moz-transform: translate3d(30%,0,0);
+        -ms-transform: translate3d(30%,0,0);
+        -o-transform: translate3d(30%,0,0);
+        transform: translate3d(30%,0,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-ms-keyframes SlideFromLeft {
+    from {
+        -webkit-transform: translate3d(30%,0,0);
+        -moz-transform: translate3d(30%,0,0);
+        -ms-transform: translate3d(30%,0,0);
+        -o-transform: translate3d(30%,0,0);
+        transform: translate3d(30%,0,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-o-keyframes SlideFromLeft {
+    from {
+        -webkit-transform: translate3d(30%,0,0);
+        -moz-transform: translate3d(30%,0,0);
+        -ms-transform: translate3d(30%,0,0);
+        -o-transform: translate3d(30%,0,0);
+        transform: translate3d(30%,0,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes SlideFromLeft {
+    from {
+        -webkit-transform: translate3d(30%,0,0);
+        -moz-transform: translate3d(30%,0,0);
+        -ms-transform: translate3d(30%,0,0);
+        -o-transform: translate3d(30%,0,0);
+        transform: translate3d(30%,0,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+
+/**
+*---------------------------------------------------------------------------
+* slide from bottom animation
+*---------------------------------------------------------------------------
+*/
+@-webkit-keyframes SlideFromBottom {
+    from {
+        -webkit-transform: translate3d(0,80%,0);
+        -moz-transform: translate3d(0,80%,0);
+        -ms-transform: translate3d(0,80%,0);
+        -o-transform: translate3d(0,80%,0);
+        transform: translate3d(0,80%,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-moz-keyframes SlideFromBottom {
+    from {
+        -webkit-transform: translate3d(0,80%,0);
+        -moz-transform: translate3d(0,80%,0);
+        -ms-transform: translate3d(0,80%,0);
+        -o-transform: translate3d(0,80%,0);
+        transform: translate3d(0,80%,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-ms-keyframes SlideFromBottom {
+    from {
+        -webkit-transform: translate3d(0,80%,0);
+        -moz-transform: translate3d(0,80%,0);
+        -ms-transform: translate3d(0,80%,0);
+        -o-transform: translate3d(0,80%,0);
+        transform: translate3d(0,80%,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+@-o-keyframes SlideFromBottom {
+    from {
+        -webkit-transform: translate3d(0,80%,0);
+        -moz-transform: translate3d(0,80%,0);
+        -ms-transform: translate3d(0,80%,0);
+        -o-transform: translate3d(0,80%,0);
+        transform: translate3d(0,80%,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes SlideFromBottom {
+    from {
+        -webkit-transform: translate3d(0,80%,0);
+        -moz-transform: translate3d(0,80%,0);
+        -ms-transform: translate3d(0,80%,0);
+        -o-transform: translate3d(0,80%,0);
+        transform: translate3d(0,80%,0);
+    }
+    to {
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+}
+
+
+/**
+* Responsiveness
+*/
+
+/**
+*---------------------------------------------------------------------------
+* tablets & phablets
+*---------------------------------------------------------------------------
+*/
+@media screen and (max-width: 860px) {
+
+    /**
+    *---------------------------------------------------------------------------
+    * section wrapper
+    *---------------------------------------------------------------------------
+    */
+    section .wrapper {
+        padding: 8% 0;
+    }
+
+    /**
+    *---------------------------------------------------------------------------
+    * columns
+    *---------------------------------------------------------------------------
+    */
+    .columns.row_2 .col,
+    .columns.row_3 .col,
+    .columns.row_4 .col,
+    .columns .col.one_third,
+    .columns .col.two_third {
+        width: 100%;
+        margin: 2% auto;
+    }
+
+    .columns.row_3 .col,
+    .columns.row_4 .col {
+        width: 50%;
+    }
+
+    /**
+    *---------------------------------------------------------------------------
+    * columns nowrap col
+    * Note: force to wrap for mobile & tablet
+    *---------------------------------------------------------------------------
+    */
+    .columns.wrap_nowrap {
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    /**
+    *---------------------------------------------------------------------------
+    * buttons info
+    *---------------------------------------------------------------------------
+    */
+    .button .info,
+    .button:hover .info,
+    .button:focus .info {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+/**
+*---------------------------------------------------------------------------
+* phablets & phone
+*---------------------------------------------------------------------------
+*/
+@media screen and (max-width: 680px) {
+
+    /**
+    *---------------------------------------------------------------------------
+    * columns
+    *---------------------------------------------------------------------------
+    */
+    .columns .col {
+        width: 100% !important;
+        margin: 2% auto !important;
+    }
+
+    /**
+    *---------------------------------------------------------------------------
+    * flex wrapper with child buttons
+    *---------------------------------------------------------------------------
+    */
+    .flex_wrapper .button {
+        margin: 2% 0.5%;
+    }
+}
