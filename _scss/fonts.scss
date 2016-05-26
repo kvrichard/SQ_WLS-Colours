@@ -1,0 +1,69 @@
+/**
+* WLS - Fonts styles
+* Common base styles for prototypes
+* -----------------------
+* @author: krichard
+* @email: kevin.richard@swissquote.ch
+*/
+
+/**
+* Import dependencies
+*/
+@import 'variables';
+
+//---------------------------------------------------------------------------
+// body default font style
+//---------------------------------------------------------------------------
+body {
+    font-family: $sq-DefaultFontFamily;
+    font-weight: lighter;
+    font-size: 11pt;
+    line-height: 1.3;
+}
+
+//---------------------------------------------------------------------------
+// headlines
+//---------------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+    padding: 1rem 0;
+
+    font-family: $sq-DefaultFontFamily;
+    font-weight: lighter;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+h2 {
+    font-size: 22pt;
+}
+
+h3 {
+    font-size: 18pt;
+}
+
+h4 {
+    font-size: 16pt;
+}
+
+h5 {
+    font-size: 14pt;
+}
+
+h6 {
+    font-size: 12pt;
+}
+
+//---------------------------------------------------------------------------
+// paragraph
+//---------------------------------------------------------------------------
+p {
+    padding: 1rem 0;
+
+    font-family: $sq-DefaultFontFamily;
+    font-weight: lighter;
+    line-height: 1.3;
+    font-size: 12pt;
+}
